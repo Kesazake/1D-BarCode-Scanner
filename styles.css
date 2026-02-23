@@ -1,0 +1,101 @@
+* {  /* 选择所有元素 */
+    margin: 0;  /* 清除外边距 */
+    padding: 0;  /* 清除内边距 */
+    box-sizing: border-box;  /* 盒子模型选择border-box，元素宽高包含边距边框，便于布局计算*/
+}
+
+ul, ol {  /* 选择所有无序列表ul和所有有序列表ol*/
+    list-style: none;  /* 清除标记符号 */
+}
+
+a {  /* 选择所有超链接 */
+    text-decoration: none;  /* 移除下划线 */
+    color: inherit;  /* 颜色继承父元素 */
+}
+
+button {  /* 选择所有按钮 */
+    background: none;  /* 清除默认背景颜色和渐变效果 */
+    border: none;  /* 清除默认边框 */
+    cursor: pointer;  /* 鼠标悬停时显示手型指针 */
+    font: inherit;  /* 字体属性继承父元素 */
+    color: #ffffff;
+}
+
+img {  /* 选择所有图片 */
+    max-width: 100%;  /* 最大宽度为父容器的100% */
+    height: auto;  /* 高度自动等比例缩放 */
+    display: block;  /* 改为块级元素清除默认空隙 */
+}
+
+/* 页面主体样式 */
+body {
+    background-color: #161823;  /* 灰色背景 */
+    min-height: 100vh;          /* 满屏高度 */
+    color: #ffffff;             /* 白色文字 */
+    font-family: Arial, sans-serif;  /* 默认字体 */
+}
+
+.app {
+    display: flex;
+    flex-direction: column;  /* 主轴方向为垂直 */
+    align-items: center;  /* 水平居中 */
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 60px;
+    color: #3EEDE7;
+}
+
+.window {
+    margin-top: 32px;
+    width: 75vw;
+    max-width: 600px;
+    height: 30vh;
+    background-color: #053154;  /* 深灰色背景 */
+    border-radius: 16px;  /* 圆角 */
+    padding: 0;
+    color: #ffffff5f;
+    position: relative;   /* 添加这行 */
+    overflow: hidden;     /* 添加这行 */
+}
+
+.placeholder {
+    position: absolute;  /* 绝对定位 */
+    top: 50%;            /* 垂直居中 */
+    left: 50%;           /* 水平居中 */
+    transform: translate(-50%, -50%);  /* 调整位置使其完全居中 */
+    font-size: 18px;
+    color: #ffffff5f;
+}
+
+#result {
+    margin-top: 32px;
+    width: 75vw;
+    max-width: 600px;
+    height: 36px;
+    border-radius: 16px;
+    padding: 8px;
+    background-color: #053154;
+    color: #ffffff5f;
+}
+
+#scanButton {
+    margin-top: 64px;
+    width: 128px;
+    height: 50px;
+    background-color: #053154;
+    border-radius: 999px;  /* 圆角 */
+    font-size: 18px;
+    color: #3EEDE7;
+    font-weight: bold;
+}
+
+.scan-result {
+    padding: 16px;
+    overflow-y: auto;  /* 垂直滚动 */
+}

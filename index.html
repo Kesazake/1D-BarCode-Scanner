@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+       name="viewport"
+       content="width=device-width, initial-scale=1.0" />
+    <title>UPC Scanner</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+        <div class="title">UPC Scanner</div>
+        <div class="window container" id="scan-window">
+          <div class="placeholder">等待扫描...</div>
+        </div>
+        <!--
+        <div class="result container">
+            <div class="text" id="result">
+                扫描结果将显示在这里
+            </div>
+        </div>
+        -->
+        <button id="scanButton">扫描 UPC</button>
+    </div>
+    <script src="./quagga.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
