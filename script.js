@@ -13,8 +13,8 @@ function startScan() {
             target: document.querySelector('.window'),
             constraints: {
                 facingMode: "environment",
-                width: { min: 640, ideal: 1280, max: 1920 },
-                height: { min: 480, ideal: 720, max: 1080 }
+                width: 640,
+                height: 480
             },
             area: {
                 top: "20%",
@@ -27,9 +27,9 @@ function startScan() {
         decoder: {
             readers: ["upc_reader", "ean_reader"]
         },
-        locate: true,
-        numOfWorkers: 4,
-        frequency: 10
+        locate: false,
+        numOfWorkers: 2,
+        frequency: 5
     }, function(err) {
         if (err) {
             document.querySelector('.window').textContent = "启动摄像头失败: " + err;
