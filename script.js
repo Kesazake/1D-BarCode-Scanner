@@ -10,14 +10,26 @@ function startScan() {
         inputStream: {
             name: "Live",
             type: "LiveStream",
-            target: document.querySelector('.window'), // 选择器
+            target: document.querySelector('.window'),
             constraints: {
-                facingMode: "environment"
+                facingMode: "environment",
+                width: { min: 640, ideal: 1280, max: 1920 },
+                height: { min: 480, ideal: 720, max: 1080 }
             },
+            area: {
+                top: "20%",
+                right: "20%",
+                left: "20%",
+                bottom: "20%"
+            },
+            singleChannel: false
         },
         decoder: {
             readers: ["upc_reader", "ean_reader"]
-        }
+        },
+        locate: true,
+        numOfWorkers: 4,
+        frequency: 10
     }, function(err) {
         if (err) {
             document.querySelector('.window').textContent = "启动摄像头失败: " + err;
@@ -33,10 +45,8 @@ function startScan() {
         const code = result.codeResult.code;
         const format = result.codeResult.format;
         
-        // 清空 window 容器
         const windowDiv = document.querySelector('.window');
         
-        // 显示扫描结果
         windowDiv.innerHTML = `
             <div class="scan-result">
                 <div class="code">扫描结果: ${code}</div>
